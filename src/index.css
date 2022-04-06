@@ -94,7 +94,6 @@ button {
 }
 
 .pageContainer,
-.offers,
 .profile,
 .spotDetails,
 .area,
@@ -103,7 +102,6 @@ button {
 }
 @media (min-width: 1024px) {
   .pageContainer,
-  .offers,
   .profile,
   .spotDetails,
   .area,
@@ -535,27 +533,6 @@ button {
   align-items: center;
 }
 
-.discountPrice {
-  padding: 0.25rem 0.5rem;
-  background-color: #000000;
-  color: #ffffff;
-  border-radius: 1rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  display: inline;
-}
-
-.listingType {
-  padding: 0.25rem 0.5rem;
-  background-color: #00cc66;
-  color: #ffffff;
-  border-radius: 2rem;
-  display: inline;
-  font-weight: 600;
-  font-size: 0.8rem;
-  margin-right: 1rem;
-}
-
 .spotDetailsList {
   padding: 0;
   list-style-type: none;
@@ -594,28 +571,6 @@ button {
   border-radius: 1rem;
   padding: 0.5rem 1rem;
   font-weight: 600;
-}
-
-.contactListingName {
-  margin-top: -1rem;
-  margin-bottom: 0;
-  font-weight: 600;
-}
-
-.contactListingLocation {
-  margin-top: 0.25rem;
-  font-weight: 600;
-}
-
-.contactLandlord {
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-}
-
-.landlordName {
-  font-weight: 600;
-  font-size: 1.2rem;
 }
 
 .messageForm {
@@ -922,6 +877,7 @@ input[type='radio']:focus {
 .formInputFile {
   width: 100%;
 }
+
 .formInputFile::-webkit-file-upload-button {
   background-color: #00cc66;
   border: none;
@@ -934,18 +890,4 @@ input[type='radio']:focus {
 
 .createListingButton {
   margin-top: 5rem;
-}
-
-.offers {
-  margin-bottom: 10rem;
-}
-
-.offerBadge {
-  padding: 0.25rem 0.5rem;
-  background-color: #000000;
-  color: #ffffff;
-  border-radius: 1rem;
-  margin-left: 1rem;
-  font-size: 0.8rem;
-  opacity: 0.75;
 }
