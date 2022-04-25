@@ -253,8 +253,8 @@ function CreateSpot() {
             <label className='formRadio'>
               <input
                 type='radio'
-                checked={areaValue === 'Downtown'}
-                value='Downtown'
+                checked={areaValue === 'downtown'}
+                value='downtown'
                 onChange={(e) => {
                   setAreaValue(e.target.value);
                 }}
