@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import OAuth from '../components/OAuth';
+import Header from '../components/Header';
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg';
 import visibilityIcon from '../assets/svg/visibilityIcon.svg';
 
@@ -45,9 +46,11 @@ function SignIn() {
 
   return (
     <>
+      <Header />
+
       <div className='pageContainer'>
         <header>
-          <p className='pageHeader' style={{ fontSize: '155%' }}>
+          <p className='pageHeader'>
             Welcome Back Homie! &#10084;
           </p>
         </header>

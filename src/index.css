@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
 *,
 *:before,
 *:after {
@@ -10,7 +11,7 @@ html::-webkit-scrollbar {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #f2f4f8;
   margin: 0;
   box-sizing: border-box;
@@ -30,6 +31,24 @@ a {
 button {
   outline: none;
   border: none;
+}
+
+.logo {
+  height: 2.5rem;
+  margin: 0.55rem 0 0 0.55rem;
+}
+
+.header {
+  background-color: #00cc66;
+  display: flex;
+  height: 4rem;
+}
+
+.headerTitle {
+  color: #ffffff;
+  margin: 0;
+  padding: 1rem 0.5rem;
+  font-size: 1.5rem;
 }
 
 .input,
@@ -141,7 +160,7 @@ button {
 }
 
 .pageHeader {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 800;
 }
 
@@ -309,7 +328,7 @@ button {
 }
 
 .registerLink {
-  margin-top: 4rem;
+  margin-top: 1.5rem;
   color: #00cc66;
   font-weight: 600;
   text-align: center;

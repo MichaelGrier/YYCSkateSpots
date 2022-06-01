@@ -14,6 +14,7 @@ import { getStorage, ref, deleteObject } from 'firebase/storage';
 import { db } from '../firebase.config';
 import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import Header from '../components/Header';
 import SpotItem from '../components/SpotItem';
 import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg';
 
@@ -123,64 +124,67 @@ function Profile() {
   // const onEdit = (spotId) => navigate(`/edit-spot/${spotId}`);
 
   return (
-    <div className='profile'>
-      <header className='profileHeader'>
-        <p className='pageHeader'>My Profile</p>
-        <button type='button' className='logOut' onClick={onLogout}>
-          Logout
-        </button>
-      </header>
+    <>
+      <Header />
+      <div className='profile'>
+        <header className='profileHeader'>
+          <p className='pageHeader'>My Profile</p>
+          <button type='button' className='logOut' onClick={onLogout}>
+            Logout
+          </button>
+        </header>
 
-      <main>
-        <div className='profileDetailsHeader'>
-          <p className='profileDetailsText'>Personal Details</p>
-          <p
-            className='changePersonalDetails'
-            onClick={() => {
-              changeDetails && onSubmit();
-              setChangeDetails((prevState) => !prevState);
-            }}
-          >
-            {changeDetails ? 'done' : 'edit'}
-          </p>
-        </div>
+        <main>
+          <div className='profileDetailsHeader'>
+            <p className='profileDetailsText'>Personal Details</p>
+            <p
+              className='changePersonalDetails'
+              onClick={() => {
+                changeDetails && onSubmit();
+                setChangeDetails((prevState) => !prevState);
+              }}
+            >
+              {changeDetails ? 'done' : 'edit'}
+            </p>
+          </div>
 
-        <div className='profileCard'>
-          <form>
-            <input
-              type='text'
-              id='name'
-              className={!changeDetails ? 'profileName' : 'profileNameActive'}
-              disabled={!changeDetails}
-              value={name}
-              onChange={onChange}
-            />
-          </form>
-        </div>
+          <div className='profileCard'>
+            <form>
+              <input
+                type='text'
+                id='name'
+                className={!changeDetails ? 'profileName' : 'profileNameActive'}
+                disabled={!changeDetails}
+                value={name}
+                onChange={onChange}
+              />
+            </form>
+          </div>
 
-        <Link to='/create-spot' className='createSpot'>
-          <p>Add a new spot</p>
-          <img src={arrowRight} alt='arrowRight' />
-        </Link>
+          <Link to='/create-spot' className='createSpot'>
+            <p>Add a new spot</p>
+            <img src={arrowRight} alt='arrowRight' />
+          </Link>
 
-        {!loading && spots.length > 0 && (
-          <>
-            <p className='spotText'>Your Spots</p>
-            <ul className='spotsList'>
-              {spots.map((spot) => (
-                <SpotItem
-                  key={spot.id}
-                  spot={spot.data}
-                  id={spot.id}
-                  onDelete={() => onDelete(spot.id)}
-                  // onEdit={() => onEdit(spot.id)}
-                />
-              ))}
-            </ul>
-          </>
-        )}
-      </main>
-    </div>
+          {!loading && spots.length > 0 && (
+            <>
+              <p className='spotText'>Your Spots</p>
+              <ul className='spotsList'>
+                {spots.map((spot) => (
+                  <SpotItem
+                    key={spot.id}
+                    spot={spot.data}
+                    id={spot.id}
+                    onDelete={() => onDelete(spot.id)}
+                    // onEdit={() => onEdit(spot.id)}
+                  />
+                ))}
+              </ul>
+            </>
+          )}
+        </main>
+      </div>
+    </>
   );
 }
 

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { collection, getDocs, query, where, orderBy } from 'firebase/firestore';
 import { db } from '../firebase.config';
 import { toast } from 'react-toastify';
+import Header from '../components/Header';
 import Spinner from '../components/Spinner';
 import SpotItem from '../components/SpotItem';
 
@@ -48,31 +49,34 @@ function Area() {
   });
 
   return (
-    <div className='area'>
-      <header>
-        <p className='pageHeader'>
-          {params.areaName === 'downtown'
-            ? 'Spots Downtown'
-            : `Spots in ${params.areaName}`}
-        </p>
-      </header>
+    <>
+      <Header />
+      <div className='area'>
+        <header>
+          <p className='pageHeader'>
+            {params.areaName === 'downtown'
+              ? 'Spots Downtown'
+              : `Spots in ${params.areaName}`}
+          </p>
+        </header>
 
-      {loading ? (
-        <Spinner />
-      ) : spots && spots.length > 0 ? (
-        <>
-          <main>
-            <ul className='areaSpots'>
-              {spots.map((spot) => (
-                <SpotItem spot={spot.data} id={spot.id} key={spot.id} />
-              ))}
-            </ul>
-          </main>
-        </>
-      ) : (
-        <p>No spots in {params.areaName} yet.</p>
-      )}
-    </div>
+        {loading ? (
+          <Spinner />
+        ) : spots && spots.length > 0 ? (
+          <>
+            <main>
+              <ul className='areaSpots'>
+                {spots.map((spot) => (
+                  <SpotItem spot={spot.data} id={spot.id} key={spot.id} />
+                ))}
+              </ul>
+            </main>
+          </>
+        ) : (
+          <p>No spots in {params.areaName} yet.</p>
+        )}
+      </div>
+    </>
   );
 }
 

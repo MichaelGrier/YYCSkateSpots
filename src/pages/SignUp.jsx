@@ -9,6 +9,7 @@ import { setDoc, doc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase.config';
 import { toast } from 'react-toastify';
 import OAuth from '../components/OAuth';
+import Header from '../components/Header';
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg';
 import visibilityIcon from '../assets/svg/visibilityIcon.svg';
 
@@ -64,9 +65,11 @@ function SignUp() {
 
   return (
     <>
+      <Header />
+
       <div className='pageContainer'>
         <header>
-          <p className='pageHeader'>YYC Spotbook &#10084;</p>
+          <p className='pageHeader'>Sign Up</p>
         </header>
 
         <main>
